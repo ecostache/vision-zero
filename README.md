@@ -1,9 +1,23 @@
-# Vision Zero Traffic Crash Analysis
+# Vision Zero: quick read on bike + ped crashes
 
-This analysis examines traffic crash data to understand patterns in bicycle and pedestrian incidents. The dataset contains detailed information about crash incidents and parties involved, enabling comprehensive safety analysis.
+Short, practical analysis for a planning audience. The notebook is analyst‑friendly and fast to skim.
 
-**Key Objectives:**
+## What’s inside
+- Bikes: share, by‑type breakdown, simple bar chart, TL;DR
+- Peds: top factors (+ "Other"), simple bar chart, TL;DR
+- Multi‑party: distribution and severity mix (stacked bars)
+- Bonus: trends, DOW × hour heatmap, KSI cuts (speed/light), and geo hot spots
 
-- Analyze bicycle crash patterns by incident type
-- Identify primary factors in pedestrian crashes
-- Provide actionable insights for traffic safety improvements
+## Run it
+1) Put the CSVs next to the notebook:
+   - `testdb_dbo_crash_incident.csv`
+   - `testdb_dbo_party.csv`
+2) Install deps (in your Jupyter env):
+   ```bash
+   pip install pandas seaborn matplotlib
+   ```
+3) Open `vision-zero.ipynb` and run all.
+
+Notes:
+- The bonus cells auto‑detect columns (date/time, severity, lat/lon) and skip gracefully if missing.
+- Plots use seaborn defaults so they’re readable without extra tuning.
